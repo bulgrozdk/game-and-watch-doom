@@ -25,6 +25,10 @@
 #include "buttons.h"
 #include "flash.h"
 #include "lcd.h"
+#include <string.h>
+void lcd_backlight_off();
+void lcd_backlight_on();
+void D_DoomMain (void);
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

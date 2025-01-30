@@ -118,7 +118,7 @@ size_t W_StdC_Read(wad_file_t *wad, unsigned int offset,
     return result;
 #else
     stdc_wad_file_t *stdc_wad;
-	unsigned count;
+	unsigned long count;
 
     stdc_wad = (stdc_wad_file_t *) wad;
 

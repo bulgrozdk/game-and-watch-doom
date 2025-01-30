@@ -2,6 +2,7 @@
 #include "data.h"
 
 #include <stdio.h>
+#include <string.h>
 
 #define FID_DOOM2 1
 
@@ -27,9 +28,9 @@ int f_size(FIL *fp) {
 FRESULT f_close (FIL* fp) {
     return FR_OK;
 }
-FRESULT f_read (FIL* fp, void* buff, unsigned btr, unsigned* br) {
+FRESULT f_read (FIL* fp, void* buff, unsigned btr, unsigned long* br) {
     if(fp->fileid == FID_DOOM2) {
-        unsigned read_len = 0;
+        unsigned long read_len = 0;
         if(doom2_wad_len - fp->position < btr) {
             read_len = doom2_wad_len - fp->position;
         } else {
@@ -42,9 +43,9 @@ FRESULT f_read (FIL* fp, void* buff, unsigned btr, unsigned* br) {
     }
     return FR_OK;
 }
-FRESULT f_readn (FIL* fp, void* buff, unsigned btr, unsigned* br) {
+FRESULT f_readn (FIL* fp, void* buff, unsigned btr, unsigned long* br) {
      if(fp->fileid == FID_DOOM2) {
-        unsigned read_len = 0;
+        unsigned long read_len = 0;
         if(doom2_wad_len - fp->position < btr) {
             read_len = doom2_wad_len - fp->position;
         } else {
@@ -57,10 +58,10 @@ FRESULT f_readn (FIL* fp, void* buff, unsigned btr, unsigned* br) {
     }
     return FR_OK;
 }
-FRESULT f_write (FIL* fp, const void* buff, unsigned btw, unsigned* bw) {
+FRESULT f_write (FIL* fp, const void* buff, unsigned btw, unsigned long* bw) {
     return FR_OK;
 }
-FRESULT f_writen (FIL* fp, const void* buff, unsigned btw, unsigned* bw) {
+FRESULT f_writen (FIL* fp, const void* buff, unsigned btw, unsigned long* bw) {
     return FR_OK;
 }
 FRESULT f_rename (const char* path_old, const char* path_new) {

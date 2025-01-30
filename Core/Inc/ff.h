@@ -23,10 +23,10 @@ int f_tell(FIL *fp);
 int f_size(FIL *fp);
 
 FRESULT f_close (FIL* fp);											/* Close an open file object */
-FRESULT f_read (FIL* fp, void* buff, unsigned btr, unsigned* br);			/* Read data from a file */
-FRESULT f_readn (FIL* fp, void* buff, unsigned btr, unsigned* br);			/* Read data from a file without size limit */
-FRESULT f_write (FIL* fp, const void* buff, unsigned btw, unsigned* bw);	/* Write data to a file */
-FRESULT f_writen (FIL* fp, const void* buff, unsigned btw, unsigned* bw);	/* Write data to a file without size limit */
+FRESULT f_read (FIL* fp, void* buff, unsigned btr, unsigned long* br);			/* Read data from a file */
+FRESULT f_readn (FIL* fp, void* buff, unsigned btr, unsigned long* br);			/* Read data from a file without size limit */
+FRESULT f_write (FIL* fp, const void* buff, unsigned btw, unsigned long* bw);	/* Write data to a file */
+FRESULT f_writen (FIL* fp, const void* buff, unsigned btw, unsigned long* bw);	/* Write data to a file without size limit */
 FRESULT f_rename (const char* path_old, const char* path_new);	/* Rename/Move a file or directory */
 FRESULT f_mkdir (const char* path);
 FRESULT f_stat (const char* path, FILINFO* fno);
